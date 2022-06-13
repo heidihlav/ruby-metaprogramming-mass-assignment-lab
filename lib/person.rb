@@ -1,3 +1,12 @@
 class Person
-  #your code here
+
+  attr_accessor :name
+
+  def initialize(attributes)
+    attributes.each do |key, value|
+      self.class.attr_accessor(key)
+      self.send(("#{key}="), value)
+    end  
+  end
+  
 end
